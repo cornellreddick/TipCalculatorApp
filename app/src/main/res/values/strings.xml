@@ -1,15 +1,18 @@
 <resources>
     <string name="app_name">TipCalculator</string>
-    <string name="billTotalLabel">Bill Total</string>
+    <string name="billTotalLabel">Bill Total:</string>
     <string name="billTotalInput">Enter Bill Total</string>
     <string name="tipLabel">Tip %:</string>
     <string name="tenPercent">10%</string>
     <string name="fifteenPercent">15%</string>
-    <string name="twentyPercent">20%</string>
+    <string name="eighteenPercent">18%</string>
     <string name="customPercent">Custom</string>
     <string name="customBarLabel">Customs:</string>
     <string name="adjustablePercentageLabel"></string>
-    <string name="tipLab">Tip:</string>
+    <string name="tipLabel2">Tip:</string>
+    <string name="tipValue">$0.0</string>
+    <string name="totalValue">$0.0</string>
+    <string name="totalPersonValue">$0.0</string>
     <string name="totalLabel">Total:</string>
     <string name="splitByLabel">Split By:</string>
     <string name="splitByNumberLabelOne">One</string>
@@ -18,4 +21,5 @@
     <string name="splitByNumberLabelFour">Four</string>
     <string name="total_PersonLabel">Total/Person:</string>
     <string name="clearButtonLabel">Clear</string>
+    <string name="maxCustomValue">40%</string>
 </resources>
