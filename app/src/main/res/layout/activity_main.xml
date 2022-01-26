@@ -58,7 +58,7 @@
             android:id="@+id/tenRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checked="false"
             android:text="@string/tenPercent" />
 
         <RadioButton
@@ -97,6 +97,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
+        android:max="100"
+        android:progress="40"
         android:scrollbarDefaultDelayBeforeFade="400"
         app:layout_constraintBottom_toBottomOf="@+id/customLabel"
         app:layout_constraintStart_toEndOf="@+id/customLabel"
@@ -156,7 +158,7 @@
         app:rippleColor="#251B1B" />
 
     <TextView
-        android:id="@+id/maxCustomValue"
+        android:id="@+id/customValue"
         android:layout_width="31dp"
         android:layout_height="16dp"
         android:layout_marginStart="8dp"
@@ -186,6 +188,7 @@
         app:layout_constraintStart_toEndOf="@+id/totalLabel" />
 
     <RadioGroup
+        android:id="@+id/splitRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
