@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         billTotalInput = findViewById(R.id.billTotalInput);
         billTotalInput.getText();
         findViewById(R.id.clearButton).setOnClickListener(this);
-
+        customSeekBar.setEnabled(false);
 
         //Tip Radio Buttons
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -51,24 +51,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (checkedId == R.id.tenRadioButton) {
                         double value = Double.parseDouble(billTotalInput.getText().toString());
-                        results = value - (value * .10);
-                        tipValue.setText(String.valueOf(results));
+                        results = value + (value * .10);
+                        tipValue.setText(String.valueOf("10.0"));
                         totalValue.setText(String.valueOf(results));
                         totalPersonValue.setText(String.valueOf(results));
                     } else if (checkedId == R.id.fifteenRadioButton) {
                         double value = Double.parseDouble(billTotalInput.getText().toString());
-                        results = value - (value * .15);
-                        tipValue.setText(String.valueOf(results));
+                        results = value + (value * .15);
+                        tipValue.setText(String.valueOf("15.0"));
                         totalValue.setText(String.valueOf(results));
                         totalPersonValue.setText(String.valueOf(results));
                     } else if (checkedId == R.id.eighteenRadioButton) {
                         double value = Double.parseDouble(billTotalInput.getText().toString());
-                        results = value - (value * .18);
-                        tipValue.setText(String.valueOf(results));
+                        results = value + (value * .18);
+                        tipValue.setText(String.valueOf("18.0"));
                         totalValue.setText(String.valueOf(results));
                         totalPersonValue.setText(String.valueOf(results));
                     } else if (checkedId == R.id.customRadioButton) {
-                        totalValue.setText(String.valueOf(customSeekBar.getProgress()));
+                        customSeekBar.setEnabled(true);
+                        double value = Double.parseDouble(billTotalInput.getText().toString());
+                        totalValue.setText(String.valueOf(customSeekBar.getProgress() + value));
                         tipValue.setText(String.valueOf(customSeekBar.getProgress()));
                         totalPersonValue.setText(String.valueOf(customSeekBar.getProgress()));
                     } else {
@@ -118,13 +120,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 customValueProgress.setText(String.valueOf(progress + "%"));
-
+                double value = Double.parseDouble(billTotalInput.getText().toString());
                 int checked = radioGroup.getCheckedRadioButtonId();
 
                if(R.id.customRadioButton == checked) {
-                   totalValue.setText(String.valueOf(progress));
+                   totalValue.setText(String.valueOf(progress + value));
                    tipValue.setText(String.valueOf(progress));
-                   totalPersonValue.setText(String.valueOf(progress));
+                   totalPersonValue.setText(String.valueOf(progress + value));
                }
             }
 
